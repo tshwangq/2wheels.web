@@ -54,11 +54,9 @@ function BlogService($http, $sce, config) {
      * @returns {*}
      */
     function decorateResult(result) {
-        console.log(result);
-
-        result.excerpt = $sce.trustAsHtml(result.excerpt.rendered);
+        result.excerpt.rendered = $sce.trustAsHtml(result.excerpt.rendered);
         result.date = Date.parse(result.date);
-        result.content = $sce.trustAsHtml(result.content.rendered);
+        result.content.rendered = $sce.trustAsHtml(result.content.rendered);
         return result;
     }
 

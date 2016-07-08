@@ -4,13 +4,17 @@
  * @param $http
  * @param $sce
  * @param config
- * @returns {{allPosts: allPosts, allPostsByTag: allPostsByTag, allPostsBySearchTerm: allPostsBySearchTerm, featuredPosts: featuredPosts, post: post}}
+ * @returns {{news:news,allPosts: allPosts, allPostsByTag: allPostsByTag, allPostsBySearchTerm: allPostsBySearchTerm, featuredPosts: featuredPosts, post: post}}
  * @constructor
  */
 function BlogService($http, $sce, config) {
 
     function allPosts() {
         return getData('posts?filter[category_name]=post');
+    }
+
+    function news() {
+        return getData('posts?filter[category_name]=news');
     }
 
     function allPostsByTag(tag) {
@@ -50,13 +54,16 @@ function BlogService($http, $sce, config) {
      * @returns {*}
      */
     function decorateResult(result) {
-        result.excerpt = $sce.trustAsHtml(result.excerpt);
+        console.log(result);
+
+        result.excerpt = $sce.trustAsHtml(result.excerpt.rendered);
         result.date = Date.parse(result.date);
-        result.content = $sce.trustAsHtml(result.content);
+        result.content = $sce.trustAsHtml(result.content.rendered);
         return result;
     }
 
     return {
+        news:news,
         allPosts: allPosts,
         allPostsByTag: allPostsByTag,
         allPostsBySearchTerm: allPostsBySearchTerm,

@@ -11,6 +11,7 @@ var Q= require('q'),
     flatten = require('gulp-flatten'),
     inject = require('gulp-inject'),
     rename = require('gulp-rename'),
+    imagemin = require('gulp-imagemin'),
     jshint = require('gulp-jshint'),
     merge = require('merge-stream'),
     wrap = require('gulp-wrap'),
@@ -29,7 +30,11 @@ var VENDOR_SCRIPTS = [
     'bower_components/angular/angular.js',
     'bower_components/angular-animate/angular-animate.js',
     'bower_components/angular-ui-router/release/angular-ui-router.js',
-    'bower_components/angular-utils-pagination/dirPagination.js'
+    'bower_components/angular-utils-pagination/dirPagination.js',
+    'bower_components/bootstrap/dist/js/bootstrap.js',
+    'bower_components/owl-carousel/owl-carousel/owl.carousel.js',
+    'bower_components/prettyphoto/js/jquery.prettyphoto.js',
+    'bower_components/wow/dist/wow.min.js'
 ];
 
 var log = function(message) {
@@ -39,7 +44,7 @@ var log = function(message) {
 ////////
 // tasks
 ////////
-function clean(target) {
+function clean(target){
     var deferred = Q.defer();
     log('cleaning files: ' + target);
 
@@ -50,6 +55,14 @@ function clean(target) {
 
     return deferred.promise;
 }
+gulp.task("clean",function() {
+    var deferred = Q.defer();
+   // log('cleaning files: ' + target);
+
+
+    return deferred.promise;
+});
+
 
 gulp.task('scripts', function() {
     var deferred = Q.defer();
@@ -117,7 +130,8 @@ gulp.task('styles', function() {
             .pipe(less())
             .pipe(autoprefixer());
 
-        vendorStyles = gulp.src(['bower_components/pure/pure.css', 'bower_components/pure/grids-responsive.css']);
+        vendorStyles = gulp.src(['bower_components/bootstrap/dist/css/bootstrap.css', 'bower_components/owl-carousel/owl-carousel/owl.carousel.css','bower_components/owl-carousel/owl-carousel/owl.theme.css','bower_components/font-awesome/css/font-awesome.css','bower_components/fullpage.js/dist/jquery.fullpage.css','bower_components/prettyphoto/css/prettyphoto.css','src/app/css/*.css']);
+
 
         merge(vendorStyles, appStyles)
             .pipe(gulp.dest('build/styles'))
@@ -147,6 +161,24 @@ gulp.task('templates', function() {
             .pipe(livereload({ auto: false }));
     });
 
+    return deferred.promise;
+});
+// Copy all static images
+gulp.task('images', function() {
+       var deferred = Q.defer();
+
+    clean(['./build/images', './dist/images']).then(function() {
+        log('copying static images');
+
+        // contents of the assets folder
+        return gulp.src('./src/app/images/**/*.*')
+            .pipe(imagemin({optimizationLevel: 5}))
+            .pipe(gulp.dest('build/images/'))
+            .pipe(gulp.dest('dist/images/'))
+            .on('finish', deferred.resolve)
+            .on('error', log);
+
+    });
     return deferred.promise;
 });
 
@@ -213,7 +245,7 @@ gulp.task('static-page-inject', ['styles', 'static-assets'], function() {
     return deferred.promise;
 });
 
-gulp.task('index', ['scripts', 'vendor-scripts', 'styles', 'templates', 'static-assets', 'static-page-inject'], function() {
+gulp.task('index', ['scripts', 'vendor-scripts', 'styles', 'templates','images', 'static-assets', 'static-page-inject'], function() {
     var build = buildIndex('build');
     var dist = buildIndex('dist');
 

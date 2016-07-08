@@ -3,10 +3,8 @@
 <!--[if IE 7]>    <html class="no-js ie7 oldie" lang="en" ng-app="app" ng-class="{ 'force-scrollbar' : !isHomePage }"> <![endif]-->
 <!--[if IE 8]>    <html class="no-js ie8 oldie" lang="en" ng-app="app" ng-class="{ 'force-scrollbar' : !isHomePage }"> <![endif]-->
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en" ng-app="app" ng-class="{ 'force-scrollbar' : !isHomePage }"> <!--<![endif]-->
-<head>
-    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
-    <link href='http://fonts.googleapis.com/css?family=Inconsolata' rel='stylesheet' type='text/css'>
-    <meta charset="utf-8">
+    <head>
+         <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <base href="%%BASE_PATH%%">
 
@@ -15,7 +13,6 @@
 
     <!-- metadata -->
     <title ng-bind="meta.title">%%DEFAULT_TITLE%%</title>
-    <meta name="description" content="%%DEFAULT_DESCRIPTION%%" ng-if="false">
     <meta name="description" content="{{ meta.description | stripHtmlTags }}">
     <meta name="author" content="Michael Bromley">
     <!-- Twitter summary card metadata. One day this might be crawled... -->
@@ -36,44 +33,91 @@
 
     <!-- inject:css -->
     <!-- endinject -->
-
+    <link rel="stylesheet" type="text/css" href="http://2lunzi.com/css/ms-style/masterslider.css">
+    	<link href="http://2lunzi.com/css/prettyPhoto.css" rel="stylesheet" type="text/css" />
+	<link rel="stylesheet" href="http://2lunzi.com/css/ms-style/masterslider.css" />
+	<link rel="stylesheet" href="http://2lunzi.com/css/ms-style/ms-layers-style.css" />
+	<link href="http://2lunzi.com/css/ms-skins/light-3/style.css" rel="stylesheet" type="text/css">
+    <link href="http://2lunzi.com/css/ms-skins/black-2/style.css" rel="stylesheet" type="text/css">
+    <script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+    <script src="http://2lunzi.com/js/masterslider.min.js"></script>
+    <script src="//cdn.bootcss.com/prettyPhoto/3.1.6/js/jquery.prettyPhoto.min.js"></script>
 </head>
 <body ng-controller="AppController as vm">
+  <div style="height:81px;" id="topbar">&nbsp;</div>
+    <!-- Loader -->
+    <div id="loader">
+	    <div class="loader-container">
+	        <div class="loader loader_middle">
+	            <div class="loader loader_ext loader_ext_left"></div>
+	            <div class="loader loader_ext loader_ext_right"></div>
+	        </div>
+	    </div>
+    </div>
+     <!-- Main-Navigation -->
+    <div id="main-navigation">
+        <div id="navigation" data-spy="affix" data-offset-top="40">
+            <nav class="navbar navbar-default" role="navigation">
+                <div class="container">
+                    <div class="row">
+                        <!--  Brand and toggle get grouped for better mobile display -->
+                        <div class="col-md-3 col-sm-3 col-xs-12" >
+                            <div class="navbar-header">
 
-<div class="mobile-menu-button">
-    <a href="#" ng-click="vm.toggleMobileMenu($event)">
-        <i class="icon-menu" ng-hide="vm.showMobileMenu"></i>
-        <i class="icon-close" ng-show="vm.showMobileMenu"></i>
-    </a>
-</div>
-
-<div class="pure-g">
-    <div class="menu-view pure-u-1 pure-u-sm-1-3 pure-u-md-1-4 pure-u-lg-1-5" ng-class="{'show-mobile-menu': vm.showMobileMenu }">
-        <div class="menu">
-            <ul>
-                <li><a ng-class="{ selected: vm.activeSection === 'home'}" ui-sref="home">Home</a></li>
-                <li><a ng-class="{ selected: vm.activeSection === 'blog' ||
-                                             vm.activeSection === 'post' ||
-                                             vm.activeSection === 'postsByTag' ||
-                                             vm.activeSection === 'postsBySearch'}" ui-sref="blog">Blog</a></li>
-                <li><a ng-class="{ selected: vm.activeSection === 'about'}" ui-sref="about">About</a></li>
-            </ul>
+                                <a class="navbar-brand wow bounceIn logo col-xs-8" data-wow-duration="2s" data-wow-delay="1s" href="index.html">
+                                    <img src="images/logo.png" alt="logo" class="img-responsive" sstyle="height: 60px; width: 169px;">
+                                </a>
+                                <div class="col-xs-4">
+                                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#fixed-collapse-navbar"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
+                                </div>
+                            </div>
+                        </div>
+                        <!--  Collect the nav links, forms, and other content for toggling -->
+                        <div class="col-md-9 col-sm-9 col-xs-12">
+                            <div class="collapse navbar-collapse nav-collapse" id="fixed-collapse-navbar">
+                                <ul class="nav navbar-nav navbar-right cl-effect-1" id="menu">
+                                    <li data-menuanchor="home" class="active"><a href="#home">首页</a> </li>
+                                    <li data-menuanchor="about" ><a href="#about" >关于我们</a> </li>
+                                    <li data-menuanchor="trails" ><a href="#trails">产品中心</a> </li>
+                                    <li data-menuanchor="sponsers" ><a href="#sponsers">合作品牌</a></li>
+                                    <li data-menuanchor="blogs" ><a href="#blogs">新闻中心</a></li>
+                                    <li ><a href="http://zs.2lunzi.com" >加入联盟</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </nav>
         </div>
     </div>
+	<!-- Main-Navigation -->
 
-    <div class="main-view pure-u-1 pure-u-sm-2-3 pure-u-md-3-4 pure-u-lg-4-5">
-        <div class="content">
-            <div ui-view="main"></div>
-        </div>
+    <div ui-view="main">
     </div>
 
 </div>
-
+            <div id="copyright">
+	            <div class="container">
+		            <div class="row text-center">
+			            <p>
+                            Copyright 2016 - 两个轮子联盟版权所有. <a href="http://www.miitbeian.gov.cn/" target="_blank">粤icp备15108525号-3</a> all rights reserved.
+			            </p>
+		            </div>
+	            </div>
+            </div>
+<script src="//cdn.bootcss.com/fullPage.js/2.8.1/jquery.fullPage.min.js"></script>
 <!-- inject:js -->
 <!-- endinject -->
 
+
 <script>
-    // Google Analytics code here
-</script>
+var _hmt = _hmt || [];
+(function() {
+var hm = document.createElement("script");
+hm.src = "//hm.baidu.com/hm.js?e95358cd7eb053da89d6cea97aeb5ea3";
+var s = document.getElementsByTagName("script")[0];
+s.parentNode.insertBefore(hm, s);
+})();
+</script>			
 </body>
 </html>

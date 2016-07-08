@@ -1,29 +1,221 @@
-<div class="pure-g page-content" ng-controller="HomeController as vm">
-    <div class="pure-u-1">
-        <div class="hero-box">
-            <h1>Angular Wordpress Seed</h1>
-            <p>
-                A bare-bones <a href="https://angularjs.org/">AngularJS</a> blog app designed to work with the Wordpress <a href="http://wp-api.org/">JSON REST API</a>.
-            </p>
+<div id="fullpage"  ng-controller="HomeController as vm">
+        <div data-anchor="home"  class="section" id="slider-wrapper">
+            <!-- masterslider -->
+            <div id="mainSlider">
+                <div class="ms-slide slide-1">
+                    <div class="slide-pattern"></div>
+                    <img src="images/blank.gif" data-src="images/main-slider/banner1.png" alt="lorem ipsum dolor sit" />
+                    <!-- slide image layer -->
+                    <img class="ms-layer" style="max-width:70%;height:auto;" alt=""            data-offset-y ="100"
+                         data-origin        = "tc"
+                         data-position      ="static"
+                         data-type          = "image"
+                         data-widthlimit    = "300"
+                         data-resize        = "false"
+                         data-effect        = "right(90)"
+                         data-duration      = "800"
+                         data-ease          = "easeOutQuart"
+
+                         src="images/blank.gif"
+                         data-src="images/main-slider/ziti.png"
+                    />
+                </div>
+                <div class="ms-slide slide-2">
+                    <div class="slide-pattern"></div>
+
+                    <img class="ms-layer" style="max-width:70%;height:auto;" alt=""            data-offset-y ="100"
+                         data-origin        = "tc"
+                         data-position      ="static"
+                         data-type          = "image"
+                         data-widthlimit    = "300"
+                         data-resize        = "false"
+                         data-effect        = "right(90)"
+                         data-duration      = "800"
+                         data-ease          = "easeOutQuart"
+
+                         src="images/blank.gif"
+                         data-src="images/main-slider/dsf.png"
+                    />
+                    <img src="images/blank.gif" data-src="images/main-slider/banner2.jpg" alt=""/>
+                </div>
+                <!-- Slider -->
+            </div>
         </div>
-    </div>
-    <div class="pure-u-1 pure-u-md-1-2">
-        <h2>Featured Posts</h2>
-        <ul class="featured-articles">
-            <li ng-repeat="post in vm.featuredPosts">
-                <a ui-sref="post({ id: post.ID, title: post.slug })">{{ post.title }}</a>
-            </li>
-        </ul>
-    </div>
-<div class="pure-u-1 pure-u-md-1-2">
-        <h2>Technologies</h2>
-        <ul class="featured-articles">
-            <li><a href="https://angularjs.org/">AngularJS</a></li>
-            <li><a href="https://wordpress.org/">Wordpress</a></li>
-            <li><a href="https://wp-api.org/">Wordpress REST API</a></li>
-            <li><a href="http://gulpjs.com/">Gulp</a></li>
-            <li><a href="http://purecss.io/">PureCSS</a></li>
-            <li><a href="http://lesscss.org/">LESS</a></li>
-        </ul>
-    </div>
+        <!-- About -->
+
+        <div data-anchor="about" class="section section-about">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6 center-block section-head">
+                        <img src="images/blank.gif" data-src="images/aboutus.png" class="img-responsive">
+                    </div>
+                    <div class="col-md-7 center-block section-body">
+                        <img src="images/blank.gif" data-src="images/pc2.png" class="img-responsive">
+                    </div>
+                </div>
+                <div class="row section-foot">
+                    国内首家自行车产销联合体联盟，以互联网思维，重建产销生态圈。 没有最低，只有更低。
+                    以“利他”为价值基石，帮助自行车实体店降低进货成本。没有最多，只有更多。以创新服务为主导
+                    ，助力自行车厂家拓展终端渠道。 加入两个轮子联盟，立刻尊享新型的自行车行业发展模式
+                </div>
+            </div>
+        </div>
+        <!-- About -->
+        <!-- Trails -->
+        <section data-anchor="trails" class="section">
+            <div >
+                <div class="container" >
+                    <div class="row " >
+                        <div class="col-lg-6 col-md-6 col-sm-9 center-block">
+                                <img src="images/blank.gif" data-src="images/products.png" class="img-responsive" />
+                            </div>
+                    </div>
+                </div>
+                <div class="row" style="margin-top:10%">
+                    <div class="col-md-8 center-block">
+                        <div class="owl-carousel">
+                            <div class="item">
+                                <div class="trail-image">
+                                    <img src="images/blank.gif" data-src="images/银河.jpg" alt="Trail Image" class="img-responsive">
+                                </div>
+                                <h3>
+                                    <!--<a href="#" class="popup" data-toggle="modal" data-target="#myModal-1">-->
+                                    700bike银河-银河相对论
+                                    <!--</a>-->
+                                </h3>
+                                <p>
+                                    700bike银河-银河相对论
+                                </p>
+                            </div>
+                            <div class="item">
+                                <div class="trail-image">
+                                    <img src="images/blank.gif" data-src="images/houjie.gif" alt="Trail Image" class="img-responsive">
+
+                                </div>
+                                <h3>
+                                    <!--<a href="#" class="popup" data-toggle="modal" data-target="#myModal-2">-->
+                                    700bike后街-智于运动
+                                    <!--</a>-->
+                                </h3>
+                                <p>
+                                    700bike后街-智于运动
+                                </p>
+                            </div>
+                            <div class="item">
+                                <div class="trail-image">
+                                    <img src="images/blank.gif" data-src="images/globe.jpg" alt="Trail Image" class="img-responsive">
+
+                                </div>
+                                <h3>
+                                    <!--<a href="#" class="popup" data-toggle="modal" data-target="#myModal-3">-->
+                                    2wheels-globe
+                                    <!--</a>-->
+                                </h3>
+                                <p>
+                                    2wheels-globe
+                                </p>
+                            </div>
+                            <div class="item">
+                                <div class="trail-image">
+                                    <img src="images/blank.gif" data-src="images/skyline.jpg" alt="Trail Image">
+                                    <!--<span class="trail-hover">
+                                         <a href="#" class="popup" data-toggle="modal" data-target="#myModal-4">
+                                         <i class="fa fa-external-link"></i>
+                                         </a>
+                                         </span>-->
+                                </div>
+                                <h3>
+                                    <!--<a href="#" class="popup" data-toggle="modal" data-target="#myModal-4">-->
+                                    2wheels-skyline
+                                    <!--</a>-->
+                                </h3>
+                                <p>
+                                    2wheels-skyline
+                                </p>
+                            </div>
+                            <div class="item">
+                                <div class="trail-image">
+                                    <img src="images/blank.gif" data-src="images/彩虹.jpg" alt="Trail Image">
+                                    <!--<span class="trail-hover">
+                                         <a href="#" class="popup" data-toggle="modal" data-target="#myModal-5">
+                                         <i class="fa fa-external-link"></i>
+                                         </a>
+                                         </span>-->
+                                </div>
+                                <h3>
+                                    <!--<a href="#" class="popup" data-toggle="modal" data-target="#myModal-5">-->
+                                    2wheels-彩虹
+                                    <!--</a>-->
+                                </h3>
+                                <p>
+                                    2wheels-彩虹
+                                </p>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+	    <!-- Trails -->
+
+        <!-- Sponsers -->
+        <section data-anchor="sponsers" class="section bands" data-src="images/bands-bg.png">
+            <a name="sponsers1" id="sponsers1"></a>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6 col-md-6 col-sm-9 center-block">
+                        <img src="images/blank.gif" data-src="images/bandss.png" class="img-responsive" />
+                    </div>
+                </div>
+                <div class="row" style="margin-top:15.6rem" >
+                    <div class="col-md-8 col-sm-9 center-block">
+                        <img src="images/blank.gif" data-src="images/bands.png"  class="img-responsive">
+                    </div>
+                </div>
+                <div class="row" style="margin-top:12rem; margin-bottom:17rem">
+                    <div class="col-md-10 center-block">
+                        <p style="1.6rem;color:#777">行业内的知名品牌、个性化的创新品牌、精心出品的自有品牌，两个轮子联盟
+用实力说话，携黄金战略伙伴，成就自行车黄金时代
+                        </p>
+                    </div>
+                </div>
+        </section>
+	    <!-- Sponsers -->
+        <!-- Blogs -->
+        <section data-anchor="blogs" class="section" data-src="images/news-bg.png" style="background:no-repeat center center fixed; -webkit-background-size: cover; -moz-background-size: cover;  -o-background-size: cover;background-size: cover;">
+            <div class="container" >
+
+                <div class="row">
+                    <div class="col-lg-6 col-md-6 col-sm-9 center-block">
+                        <img src="images/blank.gif" data-src="images/news.png" class="img-responsive" />
+                    </div>
+                </div>
+            </div>
+            <div class="container blog-container" style="margin-top:6rem">
+                <div class="row"  ng-repeat="post in vm.news">
+                    <div class="blog-info col-xs-12 col-sm-12 col-md-9 col-lg-9 center-block" >
+                        <div class="row  row-eq-height">
+                            <div class="blog-date wow fadeIn animated col-xs-3 col-sm-3 col-md-3 col-lg-3" data-wow-duration="2s" style="visibility: visible; animation-duration: 2s; animation-name: fadeIn;">
+                                <p>
+                                    <span class="day">11</span>
+                                    <span class="month">四月</span>
+                                    <span class="year">2016</span>
+                                </p>
+                            </div>
+                            <div class="blog-info-text col-md-9 col-lg-9 col-xs-9 col-sm-9 wow fadeIn animated" data-wow-duration="2s">
+                                <h3>{{ post.title.rendered }}</h3>
+                                <p>
+                                    <a  ui-sref="post({ id: post.ID, title: post.slug })">如何破冰？怎么突围？做为传统交通工具的自行车如何重焕生机？这个行业如何突破发展“瓶颈”？使消费者既拥有更多的选择、享受更好的服行,又使经营者的积极性得到提供，不只是开店糊口，更要经营出一份事业，经营出一份文化...
+</a>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Blogs -->
 </div>
+        
+	

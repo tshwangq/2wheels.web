@@ -1,0 +1,277 @@
+/*
+	Project Name : Mountain Biking
+	Author Company : Ewebcraft
+	Project Date: 16 June, 2015
+	Author Website : http://www.ewebcraft.com
+	Author Email : ewebcraft@gmail.com
+*/
+
+	/* Responsive */
+
+@media (min-width: 2280px){
+	#topbar span.topbar-right {
+		left: 72%;
+	}
+}
+
+@media (max-width: 980px) {
+	#topbar .address p, #topbar .email-address p {
+		font-size: 12px;
+	}
+	.navbar-default .navbar-nav > li {
+		font-size: 12px;
+		margin-left: 5px;
+	}
+	.navbar-default .navbar-nav > li > a {
+		padding: 4px 5px;
+	}
+	.navbar-default .navbar-nav > .active > a,
+	.navbar-default .navbar-nav > .active > a:focus,
+	.navbar-default .navbar-nav > .active > a:hover {
+		padding: 4px 5px;
+	}
+	h1.heading {
+		margin-top: 6px;
+	}
+	h1.heading span {
+		font-size: 22px;
+	}
+	h3.small-heading {
+		font-size: 12px;
+	}
+	#trails h3.small-heading,
+	#parts h3.small-heading,
+	#contact h3.small-heading {
+		font-size: 12px;
+	}
+	#subscribe .form-inline .input-small {
+		width: 32%;
+	}
+	#testimonials .testimonial .mountain-image {
+		width: 75%;
+	}
+	.mountain-image.hidden-xs > img {
+		width: 100%;
+		display: block;
+		height: auto;
+	}
+	#testimonials .testimonial .bicycle-image {
+		width: 26%;
+		right: 170px;
+	}
+	.bicycle-image.hidden-xs > img {
+		width: 100%;
+		display: block;
+		height: auto;
+	}
+	div.module.parallax-6 {
+		padding-top: 0px;
+	}
+	#packages .packages-container .package .package-container {
+		display: block;
+	}
+	#blogs .blog-container .blog-info-container .blog-info .blog-date {
+		left: 10px;
+		top: -44px;
+	}
+	#blogs .blog-container .blog-info .blog-info-text p {
+		font-size: 18px;
+	}
+	#blogs .blog-buttons {
+		display: inline-block;
+	}
+	#sponsers .sponser-heading h4 {
+		font-size: 18px;
+	}
+	#contact .contact-container .contact-info .contact-info-text p,
+	#contact .contact-container .contact-info .contact-info-text a {
+		margin-left: 10px;
+	}
+	#footer .col-sm-6 {
+		margin-bottom: 60px;
+	}
+}
+
+@media (max-width: 640px) {
+	#topbar .address p, #topbar .email-address p {
+		text-align: center;
+		font-size: 14px;
+	}
+	#topbar .email-address {
+		margin-top: 0px;
+		margin-bottom: 8px;
+	}
+	#topbar .social {
+		padding-right: 0px;
+		text-align: center;
+	}
+	p.social-skew {
+		padding-left: 0px;
+	}
+	#main-navigation {
+		top: 113px;
+	}
+	.navbar {
+		padding: 8px 0px;
+	}
+	.navbar-toggle {
+		margin-top: 15px;
+	}
+	.navbar-nav {
+		text-align: center;
+	}
+	.navbar-default .navbar-nav > li {
+		width: 20%;
+		margin-left: auto;
+		margin-right: auto;
+		margin-bottom: 5px;
+	}
+	.section-detail {
+		margin-top: 10px;
+		margin-bottom: 0px;
+	}
+	.light-section-indicator {
+		bottom: -80px;
+	}
+	#subscribe .form-inline {
+		margin-left: 8%;
+	}
+	#subscribe .form-inline .input-small {
+		width: 38%;
+	}
+	#subscribe .form-inline .btn-subscribe{
+		padding: 15px 20px;
+	}
+	div.module.parallax-6 {
+		padding-top: 0px;
+	}
+	#testimonials .testimonial .testimonials-text {
+		padding: 100px 0px;
+	}
+	#packages .packages-container .package .package-container {
+		display: block;
+	}
+	#packages .package {
+		margin-bottom: 30px;
+	}
+	#blogs .blog-container .blog-info .blog-info-text p {
+		font-size: 14px;
+		margin-left:15px;
+	}
+	#blogs .blog-buttons {
+		display: inline-block;
+	}
+	#sponsers .sponser-heading {
+		text-align: center;
+	}
+	.form-inline.bottom-contact-form {
+		margin-top: 50px;
+	}
+	#footer .col-sm-6 {
+		margin-bottom: 60px;
+	}
+	#footer .bottom-image-group .bottom-image-col {
+		width: 13%;
+	}
+}
+
+@media (max-width: 480px) {
+	#video h1 {
+		font-size: 65px;
+	}
+	#subscribe .form-inline .input-small {
+		width: 50%;
+	}
+	#subscribe .form-inline .btn-subscribe {
+		width: 75%;
+		margin: 25px 0px 0px 40px;
+	}
+	#blogs .blog-container .blog-info-container .blog-info .blog-date {
+		padding: 10px 15px;
+
+		left: 10px;
+		top: -18px;
+	}
+	#blogs .blog-container .blog-info .blog-date p {
+		font-size: 14px;
+	}
+	#blogs .blog-container .blog-info .blog-date p span.year {
+		font-size: 14px;
+	}
+	#blogs .blog-container .blog-info .blog-info-text p {
+		margin-left: 0px;
+	}
+	#blogs .blog-container .blog-info .blog-info-text {
+		margin-left: 20% !important;
+	}
+	#blogs .blog-container .blog-info-container .blog-image .blog-image-hover {
+		width: 25px;
+		height: 25px;
+		margin-left: -12px;
+		margin-top: -12px;
+		line-height: 25px;
+	}
+	#blogs .blog-container .blog-info-container .blog-image .blog-image-hover a .fa {
+		font-size: 12px;
+		line-height: 25px;
+	}
+	.section-head{
+		margin:6rem auto 0 auto;
+	}
+
+	.section-body{
+		margin:12rem auto 8rem auto;
+	}
+
+	.section-foot{
+		font-size:1.6rem;  margin-bottom:9rem
+	}
+}
+
+@media (max-width: 360px) {
+	#video h1 {
+		font-size: 50px;
+	}
+	#subscribe h2 {
+		font-size: 20px;
+	}
+	#subscribe .form-inline .input-small {
+		width: 50%;
+	}
+	#subscribe .form-inline .btn-subscribe {
+		width: 75%;
+		margin: 25px 0px 0px 30px;
+	}
+	#blogs .blog-container .blog-info .blog-info-text {
+		margin-left: 28% !important;
+	}
+	#blogs .blog-container .blog-info-container .blog-info .blog-date {
+		padding: 10px 15px;
+		left: 10px;
+		top: -22px;
+	}
+	#blogs .blog-container .blog-info .blog-date p {
+		font-size: 12px;
+	}
+	#blogs .blog-container .blog-info .blog-date p span.year {
+		font-size: 14px;
+	}
+	#blogs .blog-container .blog-info .blog-info-text p {
+		margin-left: 0px;
+	}
+	#blogs .blog-container .blog-info-container .blog-image .blog-image-hover {
+		width: 25px;
+		height: 25px;
+		margin-left: -12px;
+		margin-top: -12px;
+		line-height: 25px;
+	}
+	#blogs .blog-container .blog-info-container .blog-image .blog-image-hover a .fa {
+		font-size: 12px;
+		line-height: 25px;
+	}
+	#footer .bottom-image-group .bottom-image-col {
+		width: 17%;
+		margin-right: 2.5%;
+	}
+}

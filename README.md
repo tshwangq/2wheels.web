@@ -1,10 +1,7 @@
-# angular-wordpress-seed
+# 2lunzi.com
 
-A bare-bones AngularJS blog app designed to work with the Wordpress [JSON REST API](http://wp-api.org).
+An AngularJS web designed for 2lunzi.com. 
 
-## Demo
-
-http://www.michaelbromley.co.uk/experiments/angular-wordpress-seed/
 
 ## Setting Up Wordpress
 
@@ -47,10 +44,7 @@ Here is an outline of the folder structure:
 
 ## Extras
 
-* Simple, responsive CSS based on the [Pure CSS framework](http://purecss.io/).
+* Simple, responsive CSS based on the bootstrap.
 * A couple of custom directives are included for simple pagination of blog posts and a revealing search input.
 * Built-in support for handling search-engine and social-media crawlers based on [this technique](https://github.com/michaelbromley/angular-social-demo)
 
-## License
-
-MIT

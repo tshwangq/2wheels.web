@@ -6,11 +6,11 @@
       "apiUrl": "http://localhost:8000/wp-json/wp/v2/"
     },
     "dist": {
-      "siteUrl": "http://www.example.com/",
-      "basePath": "/",
-      "apiUrl": "http://www.example.com/api/wp-json/"
+      "siteUrl": "http://localhost:8001/dist/",
+      "basePath": "/dist/",
+      "apiUrl": "http://localhost:8000/wp-json/wp/v2/"
     }
   },
   "DEFAULT_TITLE" : "两个轮子联盟 ￭ 一千家自行车实体店共赢体",
-  "DEFAULT_DESCRIPTION" : "A basic blog app demonstrating the use of AngularJS with the Wordpress API"
+  "DEFAULT_DESCRIPTION" : "两个轮子联盟 ￭ 一千家自行车实体店共赢"
 }

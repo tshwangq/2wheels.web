@@ -54,17 +54,6 @@ jQuery(document).ready(function($){
 		$(".in").removeClass("in");
 	});
 
-
-    $(".owl-carousel").owlCarousel({
-		autoplay: true,
-		pagination: false,
-		autoPlay: 3000, //Set AutoPlay to 3 seconds
-		stopOnHover: false,
-		items : 3,
-		itemsDesktop : [1199,3],
-		itemsDesktopSmall : [979,3]
-    });
-
 	 $('#fullpage').fullpage({
                  anchors:['home','about','trails','sponsers','blogs'],
                  menu:"#menu",

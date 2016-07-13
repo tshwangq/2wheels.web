@@ -17,6 +17,10 @@ function BlogService($http, $sce, config) {
         return getData('posts?filter[category_name]=news');
     }
 
+    function products(){
+        return  getData('posts?filter[category_name]=product&_embed');
+    }
+
     function allPostsByTag(tag) {
         return getData('posts?filter[category_name]=post&filter[tag]=' + tag);
     }
@@ -57,6 +61,10 @@ function BlogService($http, $sce, config) {
         result.excerpt.rendered = $sce.trustAsHtml(result.excerpt.rendered);
         result.date = Date.parse(result.date);
         result.content.rendered = $sce.trustAsHtml(result.content.rendered);
+        console.log(result);
+        if(result.featured_media > 0)
+            result.featured = result._embedded['wp:featuredmedia'][0];
+
         return result;
     }
 
@@ -66,7 +74,8 @@ function BlogService($http, $sce, config) {
         allPostsByTag: allPostsByTag,
         allPostsBySearchTerm: allPostsBySearchTerm,
         featuredPosts: featuredPosts,
-        post: post
+        post: post,
+        products:products
     };
 }
 

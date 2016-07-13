@@ -73,86 +73,19 @@
                 </div>
                 <div class="row" style="margin-top:10%">
                     <div class="col-md-8 center-block">
-                        <div class="owl-carousel">
-                            <div class="item">
+                        <data-owl-carousel class="owl-carousel">
+                            <div owl-carousel-item="" class="item"  ng-repeat="post in vm.products">
                                 <div class="trail-image">
-                                    <img src="images/blank.gif" data-src="images/银河.jpg" alt="Trail Image" class="img-responsive">
+                                    <img src='{{post.featured.source_url}}' alt="" class="img-responsive">
                                 </div>
                                 <h3>
-                                    <!--<a href="#" class="popup" data-toggle="modal" data-target="#myModal-1">-->
-                                    700bike银河-银河相对论
-                                    <!--</a>-->
+                                    <a  ui-sref="post({ id: post.id, title: post.slug })">{{ post.title.rendered | stripHtmlTags }}</a>
                                 </h3>
                                 <p>
-                                    700bike银河-银河相对论
+                                    <a  ui-sref="post({ id: post.id, title: post.slug })">{{ post.excerpt.rendered | stripHtmlTags }}</a>
                                 </p>
                             </div>
-                            <div class="item">
-                                <div class="trail-image">
-                                    <img src="images/blank.gif" data-src="images/houjie.gif" alt="Trail Image" class="img-responsive">
-
-                                </div>
-                                <h3>
-                                    <!--<a href="#" class="popup" data-toggle="modal" data-target="#myModal-2">-->
-                                    700bike后街-智于运动
-                                    <!--</a>-->
-                                </h3>
-                                <p>
-                                    700bike后街-智于运动
-                                </p>
-                            </div>
-                            <div class="item">
-                                <div class="trail-image">
-                                    <img src="images/blank.gif" data-src="images/globe.jpg" alt="Trail Image" class="img-responsive">
-
-                                </div>
-                                <h3>
-                                    <!--<a href="#" class="popup" data-toggle="modal" data-target="#myModal-3">-->
-                                    2wheels-globe
-                                    <!--</a>-->
-                                </h3>
-                                <p>
-                                    2wheels-globe
-                                </p>
-                            </div>
-                            <div class="item">
-                                <div class="trail-image">
-                                    <img src="images/blank.gif" data-src="images/skyline.jpg" alt="Trail Image">
-                                    <!--<span class="trail-hover">
-                                         <a href="#" class="popup" data-toggle="modal" data-target="#myModal-4">
-                                         <i class="fa fa-external-link"></i>
-                                         </a>
-                                         </span>-->
-                                </div>
-                                <h3>
-                                    <!--<a href="#" class="popup" data-toggle="modal" data-target="#myModal-4">-->
-                                    2wheels-skyline
-                                    <!--</a>-->
-                                </h3>
-                                <p>
-                                    2wheels-skyline
-                                </p>
-                            </div>
-                            <div class="item">
-                                <div class="trail-image">
-                                    <img src="images/blank.gif" data-src="images/彩虹.jpg" alt="Trail Image">
-                                    <!--<span class="trail-hover">
-                                         <a href="#" class="popup" data-toggle="modal" data-target="#myModal-5">
-                                         <i class="fa fa-external-link"></i>
-                                         </a>
-                                         </span>-->
-                                </div>
-                                <h3>
-                                    <!--<a href="#" class="popup" data-toggle="modal" data-target="#myModal-5">-->
-                                    2wheels-彩虹
-                                    <!--</a>-->
-                                </h3>
-                                <p>
-                                    2wheels-彩虹
-                                </p>
-                            </div>
-
-                        </div>
+                        </data-owl-carousel>
                     </div>
                 </div>
             </div>
@@ -196,7 +129,7 @@
                 <div class="row"  ng-repeat="post in vm.news">
                     <div class="blog-info col-xs-12 col-sm-12 col-md-9 col-lg-9 center-block" >
                         <div class="row  row-eq-height">
-                            <div class="blog-date wow fadeIn animated col-xs-3 col-sm-3 col-md-3 col-lg-3" data-wow-duration="2s" style="visibility: visible; animation-duration: 2s; animation-name: fadeIn;">
+                            <div class="blog-date wow fadeIn animated col-xs-3 col-sm-3 col-md-3 col-lg-3" data-wow-duration="2s" >
                                 <p>
                                     <span class="day">11</span>
                                     <span class="month">四月</span>
